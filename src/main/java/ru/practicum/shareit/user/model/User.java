@@ -1,4 +1,4 @@
-package ru.practicum.shareit.item.model;
+package ru.practicum.shareit.user.model;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -7,28 +7,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-/**
- * TODO Sprint add-controllers.
- */
 @Data
-@Builder
+@Builder(toBuilder = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Item {
-    @NotNull
+public class User {
     Long id;
 
     @NotBlank
     String name;
 
     @NotBlank
-    String description;
-
-    Boolean available;
-
-    @NotNull
-    Long ownerId;
-
-    Long requestId;
-
-    int rentalCount;
+    String email;
 }
